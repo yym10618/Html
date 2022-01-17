@@ -1,0 +1,51 @@
+<!--
+날짜 : 2022/01/17
+이름 : 양용민
+내용 : HTML 입력 태그 실습
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.입력 태그</title>
+</head>
+<body>
+    <h3>5.입력 태그</h3>
+
+    <h4>기본입력</h4>
+    <form action="https://naver.com">
+        <input type="text", name="uid"/><br/>
+        <input type="password", name="pass"/><br/>
+        <input type="submit" value="로그인"/>
+    </form>
+
+    <h4>기타입력</h4>
+    <form action="https://naver.net">
+        <h4>취미선택</h4>
+        <label><input type="checkbox" name="hobby", value="1">등산</label>
+        <label><input type="checkbox" name="hobby", value="2">독서</label>
+        <label><input type="checkbox" name="hobby", value="3">영화</label>
+        <label><input type="checkbox" name="hobby", value="4">게임</label>
+        <label><input type="checkbox" name="hobby", value="5">운동</label>
+
+        <h4>성별선택</h4>
+        <label><input type="radio" name="gender", value="1">남</label>
+        <label><input type="radio" name="gender", value="2">여</label>
+
+        <h4>주소선택</h4>
+        <select name="addr">
+            <option>서울</option>
+            <option>대전</option>
+            <option>대구</option>
+            <option>부산</option>
+            <option>광주</option>
+        </select>
+
+        <h4>날짜선택</h4>
+        <input type="date" name="date"/>
+
+        <input type="submit" value="전송하기"/>
+    </form>
+    
+</body>
+</html>

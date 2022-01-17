@@ -1,0 +1,84 @@
+<!--
+날짜 : 2022/01/17
+이름 : 양용민
+내용 : HTML 테이블 태그 실습
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.테이블 태그</title>
+</head>
+<body>
+    <h3>3.테이블 태그</h3>
+
+    <h4>직원목록</h4>
+    <table border="1">
+        <tr><!-- talbe row -->
+            <th>아이디</th><!-- table header -->
+            <th>이름</th>
+            <th>휴대폰</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td>a101</td><!-- table data -->
+            <td>김유신</td>
+            <td>010-1234-1111</td>
+            <td>김해시</td>
+        </tr>
+        <tr>
+            <td>a102</td><!-- table data -->
+            <td>김춘추</td>
+            <td>010-1234-2222</td>
+            <td>경주시</td>
+        </tr>
+        <tr>
+            <td>a103</td><!-- table data -->
+            <td>장보고</td>
+            <td>010-1234-3333</td>
+            <td>완도시</td>
+        </tr>
+        <tr>
+            <td>a104</td><!-- table data -->
+            <td>강감찬</td>
+            <td>010-1234-4444</td>
+            <td>서울시</td>
+        </tr>
+        <tr>
+            <td>a105</td><!-- table data -->
+            <td>이순신</td>
+            <td>010-1234-5555</td>
+            <td>서울시</td>
+        </tr>
+    </table>
+    
+    
+    <h4>셀병합</h4>
+    <table border="1">
+        <tr>
+            <td colspan="2">1x1</td>
+            <td>1x3</td>
+            <td rowspan="2">1x4</td>
+            <td rowspan="3">1x5</td>
+        </tr>
+        <tr>
+            <td colspan="3">2x1</td>
+        </tr>
+        <tr>
+            <td>3x1</td>
+            <td>3x2</td>
+            <td>3x3</td>
+            <td>3x4</td>
+        </tr>
+        <tr>
+            <td>4x1</td>
+            <td>4x2</td>
+            <td>4x3</td>
+            <td>4x4</td>
+            <td>4x5</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
