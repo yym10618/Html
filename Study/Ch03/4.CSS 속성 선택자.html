@@ -1,0 +1,43 @@
+<!--
+날짜 : 2022/01/18
+이름 : 양용민
+내용 : CSS 속성 선택자 실습
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.CSS 속성 선택자</title>
+    <style>
+        /* 속성 선택자 */
+        input[name=uid] {
+            width: 100px;
+            height: 20px;
+        }
+
+        input[name=pass]{
+            width: 100px;
+            height: 20px;
+            margin-top: 6px;
+            background: #efefef;
+        }
+
+        input[type=submit]{
+            margin-top: 10px;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <h3>4.CSS 속성 선택자</h3>
+
+    <form action="#">
+        <h4>로그인</h4>
+        <input type="text"     name="uid"/><br/>
+        <input type="password" name="pass"/><br/>
+        <input type="submit"   value="로그인하기"/>
+    </form>
+
+    
+</body>
+</html>
