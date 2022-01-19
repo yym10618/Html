@@ -1,0 +1,82 @@
+<!--
+    날짜 : 2022/01/19
+    이름 : 양용민
+    내용 : CSS Display 속성
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.Display 속성</title>
+    <style>
+        /* 
+            display : none
+             - 태그요소를 브라우저에서 제거(처리공간 포함)
+             - visibility: hidden은 자리공간 유지
+            display : block
+             - inline 속성태그를 block 속성태그로 변환
+             - 세로방향으로 출력, width/height 적용가능
+            display : inline
+             - block 속성태그를 inline 속성태그로 변환
+             - 가로방향으로 출력, width/height 적용 불가
+            display : inline-block
+             - 가로방향으로 출력
+             - width/height 적용가능
+        */
+
+        div > span{background: orange;}
+        div > div{background: green;}
+
+        .box1 > span:nth-child(2){display: none;}
+        .box1 > span:nth-child(1){visibility: hidden;}
+
+        .box2 > span:nth-child(2){
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+        .box3 > div{
+            display: inline;
+            width: 100px;
+            height: 100px;
+        }
+        .box4 > div{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.Display 속성</h3>
+
+    <h4>Display:none</h4>
+    <div class="box1">
+        <span>TEXT1</span>
+        <span>TEXT2</span>
+        <span>TEXT3</span>
+    </div>
+    
+    <h4>Display:block</h4>
+    <div class="box2">
+        <span>TEXT1</span>
+        <span>TEXT2</span>
+        <span>TEXT3</span>
+    </div>
+    
+    <h4>Display:inline</h4>
+    <div class="box3">
+        <span>TEXT1</span>
+        <div>TEXT2</div>
+        <span>TEXT3</span>
+    </div>
+    
+    <h4>Display:inline-block</h4>
+    <div class="box4">
+        <span>TEXT1</span>
+        <div>TEXT2</div>
+        <span>TEXT3</span>
+    </div>
+    
+</body>
+</html>
