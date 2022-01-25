@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글수정</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        
+        /* 게시판 글보기(view) */
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <section id="board" class="write modify">
+            <h3>글수정</h3>
+            <article>
+                <form action="#">
+                    <table border="0">
+                        <tr>
+                            <td>제목</td>
+                            <td><input type="text" name="title" placeholder="제목을 입력하세요."/></td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td>
+                                <textarea name="content"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>첨부</td>
+                            <td><input type="file" name="fname"/></td>
+                        </tr>
+                    </table>
+                    <div>
+                        <a href="#" class="btnCancle">취소</a>
+                        <input type="submit" value="수정완료"/>
+                    </div>
+                </form>
+            </article>
+
+        </section><!--id board end-->
+    </div><!--wrapper end-->
+</body>
+</html>
