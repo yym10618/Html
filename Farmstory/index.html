@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>팜스토리::메인</title>
+    <style>
+        /* 초기화 */
+        *{
+            margin: 0;
+            padding: 0;
+            font: normal 12px '돋움';
+        }
+        ul, ol{list-style: none;}
+        a{text-decoration: none; color: #111;}
+        input, textarea{outline: none;}
+        body{}
+
+        #wrapper{
+            width: 980px;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        /* 헤더영역 */
+        header{
+            position: relative;
+            width: 100%;
+            height: 142px;
+            background: url('./img/head_top_line.png') no-repeat;
+        }
+        header > .logo{
+            position: absolute;
+            left: 50%;
+            top: 16px;
+            margin-left: -95px;
+            display: block;
+            width: 190px;
+            height: 64px;
+        }
+        header > .logo > img{}
+
+        header > p{
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+        header > img{
+            position: absolute;
+            right: 0;
+            top: 56px;
+        }
+        header > ul{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+        header > ul > li{
+            float: left;
+            width: 20%;
+            height: 50px;
+            background: url('./img/head_menu_line.png') no-repeat;
+        }
+        header > ul > li > a{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            background-repeat: no-repeat;
+            background-position-y: 6px;
+        }
+        header > ul > li:nth-child(1) > a{background-image: url('./img/head_menu1.png');}
+        header > ul > li:nth-child(2) > a{background-image: url('./img/head_menu2.png');}
+        header > ul > li:nth-child(3) > a{background-image: url('./img/head_menu3.png');}
+        header > ul > li:nth-child(4) > a{background-image: url('./img/head_menu4.png');}
+        header > ul > li:nth-child(5) > a{background-image: url('./img/head_menu5.png');}
+
+        header > ul > li:nth-child(1) > a:hover{background-image: url('./img/head_menu1_ov.png');}
+        header > ul > li:nth-child(2) > a:hover{background-image: url('./img/head_menu2_ov.png');}
+        header > ul > li:nth-child(3) > a:hover{background-image: url('./img/head_menu3_ov.png');}
+        header > ul > li:nth-child(4) > a:hover{background-image: url('./img/head_menu4_ov.png');}
+        header > ul > li:nth-child(5) > a:hover{background-image: url('./img/head_menu5_ov.png');}
+
+        header > ul > li > a > img{
+            position: absolute;
+            left: 120px;
+            top: -20px;
+        }
+
+
+        /* 메인영역 */
+        main{
+            width: 100%;
+            height: auto;
+        }
+        main > div{
+            width: 100%;
+            margin-top: 10px;
+        }
+        main > .slider{
+            height: 312px;
+        }
+        main > .quick{
+            height: 74px;
+        }
+        main > .quick > a{
+            float: left;
+            display: block;
+            width: 50%;
+            height: 100%;
+            padding-left: 16px;
+            padding-top: 16px;
+            box-sizing: border-box;
+        }
+        main > .quick > a:nth-child(1){background-image: url('./img/main_banner_sub1_bg.jpg');}
+        main > .quick > a:nth-child(2){background-image: url('./img/main_banner_sub2_bg.jpg');}
+        
+        main > .latest{
+            height: 186px;
+            border: 1px solid blue;
+            overflow: hidden;
+        }
+        main > .latest > article{
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+        main > .latest > article:nth-child(1){}
+        main > .latest > article:nth-child(2){}
+        main > .latest > article:nth-child(3){}
+        
+        main > .info{
+            height: 154px;
+            border-top: 2px solid #756c65;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+        main > .info > div{
+            position: relative;
+            float: left;
+            height: 100%;
+        }
+        main > .info > div:nth-child(1){
+            position: relative;
+            width: 386px;
+        }
+        main > .info > div:nth-child(2){
+            width: 230px;
+            border-left: 1px solid #d7d7d7;
+            border-right: 1px solid #d7d7d7;
+        }
+        main > .info > div:nth-child(3){
+            width: 360px;
+        }
+        main > .info > div > img:nth-child(1){
+            float: left;
+            margin-bottom: 10px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        main > .info > div > img:nth-child(2){
+            clear: left;
+            float: left;
+            margin-right: 5px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        main > .info > div > img:nth-child(3){
+            float: left;
+            margin-right: 5px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        main > .info > div > p{
+            float: right;
+            margin-right: 30px;
+        }
+        main > .info > div > a{
+            font-size: 0;
+        }
+        
+        main > .info > div > a:nth-child(1){background-image: url('./img/main_sub2_cs_bt1.png');}
+        main > .info > div > a:nth-child(2){background-image: url('./img/main_sub2_cs_bt2.png');}
+        main > .info > div > a:nth-child(3){background-image: url('./img/main_sub2_cs_bt3.png');}
+
+        /* 푸터영역 */
+        footer{
+            position: relative;
+            width: 100%;
+            height: 120px;
+            margin-top: 10px;
+            border-top: 1px solid #d1cab2;
+        }
+        footer > p{
+            float: right;
+            font-size: 11px;
+            margin-top: 20px;
+            margin-right: 16px;
+            color: #585858;
+            line-height: 19px;
+        }
+        footer > address{
+            position: absolute;
+            font: normal 12px 'Verdana';
+            left: 196px;
+            bottom: 24px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <a href="#" class="logo"><img src="./img/logo.png" alt="로고"></a>
+            <p>
+                <a href="#">HOME</a>
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+                <a href="#">고객센터</a>
+            </p>
+
+            <img src="./img/head_txt_img.png" alt="3만원이상 무료배송 팜카드 10%적립"/>
+
+            <ul>
+                <li><a href="#">팜스토리소개</a></li>
+                <li><a href="#"> <img src="./img/head_menu_badge.png" alt="할인"> 장보기</a></li>
+                <li><a href="#">농작물이야기</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">커뮤니티</a></li>
+            </ul>
+        </header>
+        <main>
+            <div class="slider"></div>
+            <div class="quick">
+                <a href="#"><img src="./img/main_banner_sub1_tit.png" alt="오늘의식단"/></a>
+                <a href="#"><img src="./img/main_banner_sub2_tit.png" alt="나도요리사"/></a>
+            </div>
+            <div class="latest">
+                <article></article>
+                <article></article>
+                <article></article>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="./img/main_sub2_cs_tit.png" alt="고객센터안내">
+                    <img src="./img/main_sub2_cs_img.png" alt="전화">
+                    <img src="./img/main_sub2_cs_txt.png" alt="전화번호">
+                    <p>평일: AM 09:00 ~ PM 06:00<br/>
+                        점심: PM 12:00 ~ PM 01:00<br/>
+                        토, 일요일, 공휴일 휴무</p>
+                    <a href="#">1:1 고객문의</a>
+                    <a href="#">자주묻는 질문</a>
+                    <a href="#">배송 조회</a>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </main>
+        <footer>
+            
+            <img src="./img/footer_logo.png" alt="로고">
+            <p>(주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-팜스토리구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br/>
+                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br/>
+                대표 : 홍길동 / 이메일 : email@mail.mail / 전화 : 01) 234-5678 / 경기도 성남시 잘한다구 신난다동 345<br/>
+            </p>
+            <address>Copyright(C)홍길동 All rights reserved.</address>
+        </footer>
+    </div>
+</body>
+</html>
