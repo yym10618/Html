@@ -3,214 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>팜스토리::메인</title>
-    <style>
-        /* 초기화 */
-        *{
-            margin: 0;
-            padding: 0;
-            font: normal 12px '돋움';
-        }
-        ul, ol{list-style: none;}
-        a{text-decoration: none; color: #111;}
-        input, textarea{outline: none;}
-        body{}
-
-        #wrapper{
-            width: 980px;
-            height: auto;
-            margin: 0 auto;
-        }
-        
-        /* 헤더영역 */
-        header{
-            position: relative;
-            width: 100%;
-            height: 142px;
-            background: url('./img/head_top_line.png') no-repeat;
-        }
-        header > .logo{
-            position: absolute;
-            left: 50%;
-            top: 16px;
-            margin-left: -95px;
-            display: block;
-            width: 190px;
-            height: 64px;
-        }
-        header > .logo > img{}
-
-        header > p{
-            position: absolute;
-            right: 0;
-            top: 10px;
-        }
-        header > img{
-            position: absolute;
-            right: 0;
-            top: 56px;
-        }
-        header > ul{
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: auto;
-        }
-        header > ul > li{
-            float: left;
-            width: 20%;
-            height: 50px;
-            background: url('./img/head_menu_line.png') no-repeat;
-        }
-        header > ul > li > a{
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-            font-size: 0;
-            background-repeat: no-repeat;
-            background-position-y: 6px;
-        }
-        header > ul > li:nth-child(1) > a{background-image: url('./img/head_menu1.png');}
-        header > ul > li:nth-child(2) > a{background-image: url('./img/head_menu2.png');}
-        header > ul > li:nth-child(3) > a{background-image: url('./img/head_menu3.png');}
-        header > ul > li:nth-child(4) > a{background-image: url('./img/head_menu4.png');}
-        header > ul > li:nth-child(5) > a{background-image: url('./img/head_menu5.png');}
-
-        header > ul > li:nth-child(1) > a:hover{background-image: url('./img/head_menu1_ov.png');}
-        header > ul > li:nth-child(2) > a:hover{background-image: url('./img/head_menu2_ov.png');}
-        header > ul > li:nth-child(3) > a:hover{background-image: url('./img/head_menu3_ov.png');}
-        header > ul > li:nth-child(4) > a:hover{background-image: url('./img/head_menu4_ov.png');}
-        header > ul > li:nth-child(5) > a:hover{background-image: url('./img/head_menu5_ov.png');}
-
-        header > ul > li > a > img{
-            position: absolute;
-            left: 120px;
-            top: -20px;
-        }
-
-
-        /* 메인영역 */
-        main{
-            width: 100%;
-            height: auto;
-        }
-        main > div{
-            width: 100%;
-            margin-top: 10px;
-        }
-        main > .slider{
-            height: 312px;
-        }
-        main > .quick{
-            height: 74px;
-        }
-        main > .quick > a{
-            float: left;
-            display: block;
-            width: 50%;
-            height: 100%;
-            padding-left: 16px;
-            padding-top: 16px;
-            box-sizing: border-box;
-        }
-        main > .quick > a:nth-child(1){background-image: url('./img/main_banner_sub1_bg.jpg');}
-        main > .quick > a:nth-child(2){background-image: url('./img/main_banner_sub2_bg.jpg');}
-        
-        main > .latest{
-            height: 186px;
-            border: 1px solid blue;
-            overflow: hidden;
-        }
-        main > .latest > article{
-            float: left;
-            width: 33.33%;
-            height: 100%;
-            border: 1px solid green;
-            box-sizing: border-box;
-        }
-        main > .latest > article:nth-child(1){}
-        main > .latest > article:nth-child(2){}
-        main > .latest > article:nth-child(3){}
-        
-        main > .info{
-            height: 154px;
-            border-top: 2px solid #756c65;
-            padding: 10px 0;
-            box-sizing: border-box;
-        }
-        main > .info > div{
-            position: relative;
-            float: left;
-            height: 100%;
-        }
-        main > .info > div:nth-child(1){
-            position: relative;
-            width: 386px;
-        }
-        main > .info > div:nth-child(2){
-            width: 230px;
-            border-left: 1px solid #d7d7d7;
-            border-right: 1px solid #d7d7d7;
-        }
-        main > .info > div:nth-child(3){
-            width: 360px;
-        }
-        main > .info > div > img:nth-child(1){
-            float: left;
-            margin-bottom: 10px;
-            border: 1px solid red;
-            box-sizing: border-box;
-        }
-        main > .info > div > img:nth-child(2){
-            clear: left;
-            float: left;
-            margin-right: 5px;
-            border: 1px solid red;
-            box-sizing: border-box;
-        }
-        main > .info > div > img:nth-child(3){
-            float: left;
-            margin-right: 5px;
-            border: 1px solid red;
-            box-sizing: border-box;
-        }
-        main > .info > div > p{
-            float: right;
-            margin-right: 30px;
-        }
-        main > .info > div > a{
-            font-size: 0;
-        }
-        
-        main > .info > div > a:nth-child(1){background-image: url('./img/main_sub2_cs_bt1.png');}
-        main > .info > div > a:nth-child(2){background-image: url('./img/main_sub2_cs_bt2.png');}
-        main > .info > div > a:nth-child(3){background-image: url('./img/main_sub2_cs_bt3.png');}
-
-        /* 푸터영역 */
-        footer{
-            position: relative;
-            width: 100%;
-            height: 120px;
-            margin-top: 10px;
-            border-top: 1px solid #d1cab2;
-        }
-        footer > p{
-            float: right;
-            font-size: 11px;
-            margin-top: 20px;
-            margin-right: 16px;
-            color: #585858;
-            line-height: 19px;
-        }
-        footer > address{
-            position: absolute;
-            font: normal 12px 'Verdana';
-            left: 196px;
-            bottom: 24px;
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body>
     <div id="wrapper">
@@ -234,15 +27,118 @@
             </ul>
         </header>
         <main>
-            <div class="slider"></div>
+            <div class="slider">
+                <ul>
+                    <li><img src="./img/main_slide_img1.jpg" alt="슬라이더1"></li>
+                    <li><img src="./img/main_slide_img2.jpg" alt="슬라이더2"></li>
+                    <li><img src="./img/main_slide_img3.jpg" alt="슬라이더3"></li>
+                </ul>
+                <img src="./img/main_slide_img_tit.png" alt="사람과 자연을 사람하는 팜스토리"/>
+                <div>
+                    <img src="./img/main_banner_txt.png" alt="GRAND OPEN">
+                    <img src="./img/main_banner_tit.png" alt="팜스토리 오픈기념 30% 할인 이벤트">
+                    <img src="./img/main_banner_img.png" alt="과일 이미지">
+                </div>
+
+            </div>
             <div class="quick">
                 <a href="#"><img src="./img/main_banner_sub1_tit.png" alt="오늘의식단"/></a>
                 <a href="#"><img src="./img/main_banner_sub2_tit.png" alt="나도요리사"/></a>
             </div>
             <div class="latest">
-                <article></article>
-                <article></article>
-                <article></article>
+                <article>
+                    <a href="#"><img src="./img/main_latest1_tit.png" alt="텃밭가꾸기"></a>
+                    <img src="./img/main_latest1_img.jpg" alt="산수유 이미지">
+                    <table border="0">
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                    </table>
+                </article>
+                <article>
+                    <a href="#"><img src="./img/main_latest2_tit.png" alt="텃밭가꾸기"></a>
+                    <img src="./img/main_latest2_img.jpg" alt="산수유 이미지">
+                    <table border="0">
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                    </table>
+                </article>
+                <article>
+                    <a href="#"><img src="./img/main_latest3_tit.png" alt="농작물이야기"></a>
+                    <img src="./img/main_latest3_img.jpg" alt="산수유 이미지">
+                    <table border="0">
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                        <tr>
+                            <td>></td>
+                            <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
+                            <td>22-01-27</td>
+                        </tr>
+                    </table>
+                </article>
             </div>
             <div class="info">
                 <div>
@@ -252,11 +148,22 @@
                     <p>평일: AM 09:00 ~ PM 06:00<br/>
                         점심: PM 12:00 ~ PM 01:00<br/>
                         토, 일요일, 공휴일 휴무</p>
-                    <a href="#">1:1 고객문의</a>
-                    <a href="#">자주묻는 질문</a>
-                    <a href="#">배송 조회</a>
+                    <div>
+                        <div><a href="#"><img src="./img/main_sub2_cs_bt1.png" alt="1:1고객문의"></a></div>
+                        <div><a href="#"><img src="./img/main_sub2_cs_bt2.png" alt="자주묻는질문"></a></div>
+                        <div><a href="#"><img src="./img/main_sub2_cs_bt3.png" alt="배송조회"></a></div>
+                    </div>
                 </div>
-                <div></div>
+                <div>
+                    <img src="./img/main_sub2_account_tit.png" alt="계좌안내">
+                    <p>
+                        기업은행 123-456789-01-01-012<br/>
+                        국민은행 01-1234-56789<br/>
+                        우리은행 123-456789-01-01-012<br/>
+                        하나은행 123-456789-01-01<br/>
+                        예 금 주 (주)팜스토리
+                    </p>
+                </div>
                 <div></div>
             </div>
 
