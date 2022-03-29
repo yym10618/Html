@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>케이마켓::상품상세</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <style>
+        /* 상품 상세(view) */
+        #product-view {
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        #product-view > section {
+            width: 100%;
+            height: auto;
+        }
+        #product-view > section > article {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+
+        #product-view > section > article > nav {
+            border-bottom: 1px solid #a4a9b0;
+            padding: 6px 0;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        #product-view > section > article > nav > h1 {
+            font-family: 'Noto Sans KR', dotum, sans-serif;
+            color: #1e2732;
+            font-weight: bold;
+            font-size: 1.5em;
+            float: left;
+        }
+
+        #product-view > section > article > nav > p {
+            float: left;
+            color: #777;
+            font-family: 'Noto Sans KR', dotum, sans-serif;
+            margin-top: 6px;
+            margin-left: 6px;
+        }
+        
+        /* .info */
+        #product-view > section > .info > div {
+            float: left;
+            width: 50%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        #product-view > section > .info > div.image > img {
+            width: 100%;
+        }
+
+        #product-view > section > .info > div.summary > nav {
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        #product-view > section > .info > div.summary > nav > h1 {
+            float: left;
+            color: #1e2732;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        #product-view > section > .info > div.summary > nav > h2 {
+            float: right;
+            color: #777;
+            margin-top: 8px;
+        }
+
+        #product-view > section > .info > div.summary > p {
+            font-size: 18px;
+            color: #474747;
+            line-height: 36px;
+            letter-spacing: -1px;
+        }
+
+        h5.rating{
+            width: 150px;
+            height: 20px;
+            font-size: 0px;
+            background-image: url(../img/ico_rating_star.png);
+            background-repeat: no-repeat;
+            background-position: 36px 0px;
+            text-indent: 86px;
+        }
+        
+        h5.rating.star4{
+            background-position: 0 -160px;
+        }
+
+        #product-view > section > .info > div.summary > nav > h5.rating.star4 > a {
+            color: #346aff;
+            font-family: 'Malgun Gothic', dotum, sans-serif;
+            text-decoration: underline;
+        }
+
+        #product-view > section > .info > div.summary > nav > div.org_price > del {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        #product-view > section > .info > div.summary > nav > div.org_price > span {
+            color: #eb000a;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            margin-left: 6px;
+        }
+
+        #product-view > section > .info > div.summary > nav > div.dis_price > ins {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #product-view > section > .info > div.summary > nav > span.delivery {
+            font-size: 16px;
+            color: #2e8de5;
+        }
+
+        #product-view > section > .info > div.summary > nav > span.arrival {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        #product-view > section > .info > div.summary > nav > span.desc {
+            display: block;
+            color: #aaa;
+        }
+        
+        #product-view > section > .info > div.summary > nav > span.card.cardfree > i {
+            background-position: -126px 0;
+            display: inline-block;
+            width: 30px;
+            height: 18px;
+            top: 4px;
+            background-image: url(../img/sp_icon.png);
+            font-size: 0;
+            vertical-align: text-top;
+            margin-right: 2px;
+        }
+
+        #product-view > section > .info > div.summary > nav > span.card.cardadd > i {
+            background-position: -51px -21px;
+            display: inline-block;
+            width: 30px;
+            height: 18px;
+            top: 4px;
+            background-image: url(../img/sp_icon.png);
+            font-size: 0;
+            vertical-align: text-top;
+            margin-right: 2px;
+        }
+
+        #product-view > section > .info > div.summary > nav > span.origin {
+            font-size: 16px;
+        }
+
+        #product-view > section > .info > div.summary > img.banner {
+            width: 100%;
+        }
+
+        #product-view > section > .info > div.summary > div.total {
+            overflow: hidden;
+            margin-top: 16px;
+        }
+
+        #product-view > section > .info > div.summary > div.total > span {
+            float: right;
+            display: inline-block;
+            line-height: 38px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            text-align: right;
+            letter-spacing: -0.5px;
+        }
+
+        #product-view > section > .info > div.summary > div.total > em {
+            float: right;
+            display: block;
+            width: 100px;
+            height: 22px;
+            padding: 10px 0 0;
+            font-size: 16px;
+            line-height: 22px;
+            color: #5e636d;
+            letter-spacing: -1px;
+        }
+        
+        /* .detail */
+        #product-view > section > .detail {
+            overflow: hidden;
+        }
+
+        #product-view > section > .notice > table {
+            width: 100%;
+            display: table;
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            border-spacing: 2px;
+            border-color: grey;
+        }
+
+        #product-view > section > .notice > table > tbody > tr > td {
+            padding: 5px 0 6px 21px;
+            font-size: 14px;
+            color: #777;
+            font-family: 'Noto Sans KR', dotum, sans-serif;
+        }
+        
+        #product-view > section > .notice > table > tbody > tr > td:nth-child(1) {
+            width: 20%;
+            color: #222;
+        }
+
+        #product-view > section > .notice > table > tbody > tr > td:nth-child(2) {}
+
+        #product-view > section > .notice > table:nth-of-type(2) {
+            border-top: 1px solid #ececec;
+        }
+
+        #product-view > section > .notice > p.notice{
+            margin: 20px 0;
+            padding: 21px 26px 20px 19px;
+            line-height: 20px;
+            font-size: 14px;
+            font-family: 'Noto Sans KR', dotum, sans-serif;
+            color: #757c8a;
+            background: #fafafa;
+            border-radius: 2px;
+        }
+
+        #product-view > section > .review {
+            font-family: 'Noto Sans KR', dotum, sans-serif;
+        }
+
+        #product-view > section > .review > ul {
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #product-view > section > .review > ul > li {
+            padding-top: 16px;
+            border-bottom: 1px solid #ececec;
+            box-sizing: border-box;
+        }
+
+        #product-view > section > .review > ul > li > div {
+            overflow: hidden;
+        }
+
+        #product-view > section > .review > ul > li > div > h5 {
+            float: left;
+        }
+
+        #product-view > section > .review > ul > li > div > span {
+            float: right;
+            color: #555;
+        }
+
+        #product-view > section > .review > ul > li > h3 {
+            color: #555;
+            margin-top: 6px;
+        }
+
+        #product-view > section > .review > ul > li > p {
+            width: 100%;
+            height: 60px;
+            color: #555;
+            font-size: 14px;
+            line-height: 19px;
+            word-break: break-all;
+            word-wrap: break-word;
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>    
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                    <a href="#">마이페이지</a>
+                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="#"><img src="../img/header_logo.png" alt="로고"/></a>
+                    <form action="#">
+                        <input type="text" name="search"/>
+                        <button><i class="fa fa-search"></i></button>
+                    </form>                
+                </div>
+                
+            </div>
+            <div class="menu">
+                <div>
+                    <ul>
+                        <li><a href="#">히트상품</a></li>
+                        <li><a href="#">추천상품</a></li>
+                        <li><a href="#">최신상품</a></li>
+                        <li><a href="#">인기상품</a></li>
+                        <li><a href="#">할인상품</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">쿠폰존</a></li>
+                        <li><a href="#">사용후기</a></li>
+                        <li><a href="#">개인결제</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <aside></aside>
+            <section id="product-view">
+
+                <!--상품상세 내비게이션-->
+                <nav>
+                    <h1>[블루포스] FreeMovement BLUEFORCE</h1>
+                    <p>
+                        HOME > <span>패션·의류·뷰티</span> > <strong>남성의류</strong>
+                    </p>
+                </nav>
+                <section>
+                    <!--상품 기본정보-->
+                    <article class="info">
+                        <div class="image">
+                            <img src="../img/thumb-sample-t1.jpg" alt="상품이미지">
+                        </div>
+                        <div class="summary">
+                            <nav>
+                                <h1>(주)블루포스</h1>
+                                <h2>
+                                    상품번호&nbsp;:&nbsp;
+                                    <span>10010118412</span>
+                                </h2>
+                            </nav>
+                            <p>남자 셔츠 남방 남성 와이셔츠 체크남방 스트라이프</p>
+                            <nav>
+                                <h5 class="rating star4">
+                                    <a href="#">상품평보기</a>
+                                </h5>
+                            </nav>
+                            <nav>
+                                <div class="org_price">
+                                    <del>30,000원</del>
+                                    <span>10%</span>
+                                </div>
+                                <div class="dis_price">
+                                    <ins>27,000원</ins>
+                                </div>
+                            </nav>
+                            <nav>
+                                <span class="delivery">무료배송</span>
+                                <span class="arrival">모레(금) 7/8 도착예정</span>
+                                <span class="desc">본 상품은 국내배송만 가능합니다.</span>
+                            </nav>
+                            <nav>
+                                <span class="card cardfree">
+                                    <i>아이콘</i>
+                                    무이자할부
+                                </span>
+                                &nbsp;&nbsp;
+                                <span class="card cardadd">
+                                    <i>아이콘</i>
+                                    카드추가혜택
+                                </span>
+                            </nav>
+                            <nav>
+                                <span class="origin">원산지-상세설명 참조</span>
+                            </nav>
+                            <img src="../img/vip_plcc_banner.png" alt="100원만 결제해도 1만원 적립!" class="banner">
+                            <div class="total">
+                                <span>0원</span>
+                                <em>총 상품금액</em>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!--상품 상세정보-->
+                    <article class="detail">
+                        <nav>
+                            <h1>상품정보</h1>
+                        </nav>
+                        <!--상품상세 페이지 이미지-->
+                        <img src="../img/sample_detail1.jpg" alt="">
+                        <img src="../img/sample_detail2.jpg" alt="">
+                    </article>
+
+                    <!--상품 정보 제공 고시-->
+                    <article class="notice">
+                        <nav>
+                            <h1>상품 정보 제공 고시</h1>
+                            <p>[전자상거래에 관한 상품정보 제공에 관한 고시] 항목에 의거 등록된 정보입니다.</p>
+                        </nav>
+                        <table border="0">
+                            <tr>
+                                <td>상품번호</td>
+                                <td>10110125435</td>
+                            </tr>
+                            <tr>
+                                <td>상품상태</td>
+                                <td>새상품</td>
+                            </tr>
+                            <tr>
+                                <td>부가세 면세여부</td>
+                                <td>과세상품</td>
+                            </tr>
+                            <tr>
+                                <td>영수증발행</td>
+                                <td>발행가능 - 신용카드 전표, 온라인 현금영수증</td>
+                            </tr>
+                            <tr>
+                                <td>사업자구분</td>
+                                <td>사업자 판매자</td>
+                            </tr>
+                            <tr>
+                                <td>브랜드</td>
+                                <td>블루포스</td>
+                            </tr>
+                            <tr>
+                                <td>원산지</td>
+                                <td>국내생산</td>
+                            </tr>
+                        </table>
+                        <table border="0">
+                            <tr>
+                                <td>제품소재</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>색상</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>치수</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>제조자/수입국</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>제조국</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>취급시 주의사항</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>제조연월</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>품질보증기준</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>A/S 책임자와 전화번호</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td>주문후 예상 배송기간</td>
+                                <td>상세정보 직접입력</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">구매, 교환, 반품, 배송, 설치 등과 관련하여 추가비용, 제한조건 등의 특이사항이 있는 경우</td>
+                            </tr>
+                        </table>
+                        <p class="notice">
+                            소비자가 전자상거래등에서 소비자 보호에 관한 법률 제 17조 제1항 또는 제3항에 따라 청약철회를 하고
+                            동법 제 18조 제1항 에 따라 청약철회한 물품을 판매자에게 반환하였음에도 불구 하고 결제 대금의
+                            환급이 3영업일을 넘게 지연된 경우, 소비자 는 전자상거래등에서 소비자보호에 관한 법률 제18조
+                            제2항 및 동법 시행령 제21조 2에 따라 지연일수에 대하여 전상법 시행령으로 정하는 이율을 곱하여
+                            산정한 지연이자(“지연배상금”)를 신청할 수 있습니다. 아울러, 교환∙반품∙보증 및 결제대금의
+                            환급신청은 [나의쇼핑정보]에서 하실 수 있으며, 자세한 문의는 개별 판매자에게 연락하여 주시기 바랍니다.
+                        </p>
+                    </article>
+                    
+                    <!--상품 리뷰-->
+                    <article class="review">
+                        <nav><h1>상품리뷰</h1></nav>
+                        <ul>
+                            <li>
+                                <div>
+                                    <h5 class="rating star4">상품평</h5>
+                                    <span>seo******	2018-07-10</span>
+                                </div>
+                                <h3>상품명1/BLUE/L</h3>
+                                <p>
+                                    가격대비 정말 괜찮은 옷이라 생각되네요 핏은 음...제가 입기엔 어깨선이 맞고 루즈핏이라 하기도 좀 힘드네요.
+                                    아주 약간 루즈한정도...?그래도 이만한 옷은 없다고 봅니다 깨끗하고 포장도 괜찮고 다음에도 여기서 판매하는
+                                    제품들을 구매하고 싶네요 정말 만족하고 후기 남깁니다 많이 파시길 바래요 ~ ~ ~
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <h5 class="rating star4">상품평</h5>
+                                    <span>seo******	2018-07-10</span>
+                                </div>
+                                <h3>상품명1/BLUE/L</h3>
+                                <p>
+                                    가격대비 정말 괜찮은 옷이라 생각되네요 핏은 음...제가 입기엔 어깨선이 맞고 루즈핏이라 하기도 좀 힘드네요.
+                                    아주 약간 루즈한정도...?그래도 이만한 옷은 없다고 봅니다 깨끗하고 포장도 괜찮고 다음에도 여기서 판매하는
+                                    제품들을 구매하고 싶네요 정말 만족하고 후기 남깁니다 많이 파시길 바래요 ~ ~ ~
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <h5 class="rating star4">상품평</h5>
+                                    <span>seo******	2018-07-10</span>
+                                </div>
+                                <h3>상품명1/BLUE/L</h3>
+                                <p>
+                                    가격대비 정말 괜찮은 옷이라 생각되네요 핏은 음...제가 입기엔 어깨선이 맞고 루즈핏이라 하기도 좀 힘드네요.
+                                    아주 약간 루즈한정도...?그래도 이만한 옷은 없다고 봅니다 깨끗하고 포장도 괜찮고 다음에도 여기서 판매하는
+                                    제품들을 구매하고 싶네요 정말 만족하고 후기 남깁니다 많이 파시길 바래요 ~ ~ ~
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <h5 class="rating star4">상품평</h5>
+                                    <span>seo******	2018-07-10</span>
+                                </div>
+                                <h3>상품명1/BLUE/L</h3>
+                                <p>
+                                    가격대비 정말 괜찮은 옷이라 생각되네요 핏은 음...제가 입기엔 어깨선이 맞고 루즈핏이라 하기도 좀 힘드네요.
+                                    아주 약간 루즈한정도...?그래도 이만한 옷은 없다고 봅니다 깨끗하고 포장도 괜찮고 다음에도 여기서 판매하는
+                                    제품들을 구매하고 싶네요 정말 만족하고 후기 남깁니다 많이 파시길 바래요 ~ ~ ~
+                                </p>
+                            </li>
+                            <li>
+                                <div>
+                                    <h5 class="rating star4">상품평</h5>
+                                    <span>seo******	2018-07-10</span>
+                                </div>
+                                <h3>상품명1/BLUE/L</h3>
+                                <p>
+                                    가격대비 정말 괜찮은 옷이라 생각되네요 핏은 음...제가 입기엔 어깨선이 맞고 루즈핏이라 하기도 좀 힘드네요.
+                                    아주 약간 루즈한정도...?그래도 이만한 옷은 없다고 봅니다 깨끗하고 포장도 괜찮고 다음에도 여기서 판매하는
+                                    제품들을 구매하고 싶네요 정말 만족하고 후기 남깁니다 많이 파시길 바래요 ~ ~ ~
+                                </p>
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- 상품목록 페이지번호 -->
+                <div class="paging">
+                    <span class="prev"><a href="#"><&nbsp;이전</a></span>
+                    <span class="num">
+                        <a href="#" class="on">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                    </span>
+                    <span class="next"><a href="#">다음&nbsp;></a></span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">서비스이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">전자금융거래약관</a></li>
+            </ul>
+            <div>
+                <p><img src="../img/footer_logo.png" alt="로고"></p>
+                <p>
+                  <strong>(주)KMARKET</strong><br />
+                  부산시 강남구 테헤란로 152 (역삼동 강남파이낸스센터)<br />
+                  대표이사 : 홍길동<br />
+                  사업자등록번호 : 220-81-83676 사업자정보확인<br />
+                  통신판매업신고 : 강남 10630호 Fax : 02-589-8842
+                </p>
+                <p>
+                  <strong>고객센터</strong><br />
+                  Tel : 1234-5678 (평일 09:00~18:00)<br />
+                  스마일클럽/SVIP 전용 : 1522-5700 (365일 09:00~18:00)<br />
+                  경기도 부천시 원미구 부일로 223(상동) 투나빌딩 6층<br />
+                  Fax : 051-123-4567 | Mail : kmarket@kmarket.co.kr<br />
+                </p>
+              </div>              
+        </footer>
+    </div>
+</body>
+</html>
