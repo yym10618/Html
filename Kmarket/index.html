@@ -30,11 +30,55 @@
             box-sizing: border-box;
         }
 
-        main > aside.left > ul.category > li:first-child {}
-        main > aside.left > ul.category > li > i{}
-        main > aside.left > ul.category > li > a{}
-        main > aside.left > ul.category > li > a > i{}
-        main > aside.left > ul.category > li > ol {}
+        main > aside.left > ul.category > li:first-child {
+            padding: 0 20px;
+            color: #fff;
+            line-height: 40px;
+        }
+        
+        main > aside.left > ul.category > li > i{
+            display: inline-block;
+            width: 22px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        main > aside.left > ul.category > li > i.fa-angle-right{
+            float: right;
+            width: auto;
+            margin-right: 0;
+            margin-top: 10px;
+        }
+
+        main > aside.left > ul.category > li > a{
+            display: block;
+            padding: 0 20px;
+            line-height: 40px;
+            color: #ccc;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        main > aside.left > ul.category > li > a > i{
+            display: inline-block;
+            width: 22px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        main > aside.left > ul.category > li > ol {
+            display: none;
+            position: absolute;
+            left: 215px;
+            top: 0px;
+            z-index: 10000;
+            width: 215px;
+            height: 100%;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #787f89;
+            border-top: none;
+            box-sizing: border-box;
+        }
         main > aside.left > ul.category > li > ol > li {}
         main > aside.left > ul.category > li > ol > li > a {}
         main > aside.left > article.best {}
