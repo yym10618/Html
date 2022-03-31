@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>케이마켓 관리자::관리자메인</title>
+    
+    <!--admin 공통 스타일-->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* admin-product-register 스타일 */
+#admin-product-register {
+    float: right;
+    width: 80%;
+    min-height: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#admin-product-register span {
+    vertical-align: bottom;
+    color: #bc2e13;
+}
+
+#admin-product-register input {
+    width: 200px;
+    padding: 6px;
+    border: 1px solid #959595;
+    font-size: 13px;
+    background-color: #fefefe;
+    color: #333;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+#admin-product-register select {
+    width: 150px;
+    padding: 6px;
+    border: 1px solid #959595;
+    font-size: 13px;
+    background-color: #fefefe;
+    color: #333;
+    box-sizing: border-box;
+}
+
+#admin-product-register strong{
+    font-weight: bold;
+}
+
+#admin-product-register > nav {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #c0c0c0;
+    box-sizing: border-box;
+}
+
+#admin-product-register > nav > h3 {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#admin-product-register > nav > p {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+#admin-product-register > article {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+#admin-product-register > article.product-register {}
+#admin-product-register > article.product-register > form {}
+#admin-product-register > article.product-register > form > section {
+    margin-bottom: 16px;
+}
+
+#admin-product-register > article.product-register > form > section > h4 {
+    font-size: 16px;
+}
+
+#admin-product-register > article.product-register > form > section > p {
+    background: #eaeaea;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+#admin-product-register > article.product-register > form > section > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#admin-product-register > article.product-register > form > section > table > tbody > tr {}
+#admin-product-register > article.product-register > form > section > table > tbody > tr > td {
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px;
+    text-align: left;
+}
+
+#admin-product-register > article.product-register > form > section > table > tbody > tr > td:nth-child(1) {
+    width: 160px;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background: #f6f6f6;
+    padding: 10px;
+    text-align: left;
+}
+
+#admin-product-register > article.product-register > form > section > table > tbody > tr > td > span {
+    display: block;
+}
+
+#admin-product-register > article.product-register > form > section > table > tbody > tr > td > input[type="file" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: pre;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+}
+#admin-product-register > article.product-register > form > input[type="submit"] {
+    float: right;
+    width: 100px;
+}
+#admin-product-register > p {}
+#admin-product-register > p.ico {
+    width: 100%;
+    height: 58px;
+    margin-top: 20px;
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 50px;
+    line-height: 58px;
+    box-sizing: border-box;
+}
+#admin-product-register > p.alert {
+    border-color: #FDD845;
+    background: #FFF6BF url(../img/admin_ico_alert.png) no-repeat scroll 15px 16px;
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="../js/gnb.js"></script>
+    
+</head>
+<body>
+    <div id="admin-wrapper">
+        <header>
+            <div class="container">
+                <a href="#" class="logo"><img src="../img/admin_logo.png" alt="ADMINISTRATOR"/></a>
+                <p>
+                    <span>홍길동</span> 님 반갑습니다.
+                    <a href="#">HOME |</a>
+                    <a href="#">로그아웃 |</a>
+                    <a href="#">고객센터</a>
+                </p>
+            </div>
+        </header>
+        <main>
+            <aside>
+                <ul id="gnb">
+                    <li>
+                        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>환경설정</a>
+                        <ol>
+                            <li><a href="#">기본환경설정</a></li>
+                            <li><a href="#">배너관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-store" aria-hidden="true"></i>상점관리</a>
+                        <ol>
+                            <li><a href="#">판매자현황</a></li>
+                            <li><a href="#">재고관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>회원관리</a>
+                        <ol>
+                            <li><a href="#">회원현황</a></li>
+                            <li><a href="#">포인트관리</a></li>
+                            <li><a href="#">비회원관리</a></li>
+                            <li><a href="#">접속자집계</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-box-open" aria-hidden="true"></i>상품관리</a>
+                        <ol>
+                            <li><a href="./product/list.html">상품현황</a></li>
+                            <li><a href="./product/register.html">상품등록</a></li>
+                            <li><a href="#">재고관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i>주문관리</a>
+                        <ol>
+                            <li><a href="#">주문현황</a></li>
+                            <li><a href="#">매출현황</a></li>
+                            <li><a href="#">결제관리</a></li>
+                            <li><a href="#">배송관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>게시판관리</a>
+                        <ol>
+                            <li><a href="#">게시판현황</a></li>
+                            <li><a href="#">고객문의</a></li>
+                        </ol>
+                    </li>
+                </ul>
+
+            </aside>
+            <section id="admin-product-register">
+
+                <nav>
+                    <h3>상품등록</h3>
+                    <p>HOME &gt; 상품관리 &gt; <strong>상품등록</strong></p>
+                </nav>
+                                    
+                <article class="product-register">
+                    <form action="#">
+
+                        <!-- 상품분류 -->
+                        <section>
+                            <h4>상품분류</h4>
+                            <p>
+                                기본분류는 반드시 선택하셔야 합니다. 하나의 상품에 1개의 분류를 지정 합니다.
+                            </p>
+                            <table>
+                                <tbody><tr>
+                                    <td>1차 분류</td>
+                                    <td>
+                                        <select name="category1">
+                                            <option value="cate0">1차 분류 선택</option>
+                                            <option value="cate11">패션·의류·뷰티</option>
+                                            <option value="cate12">가전·디지털</option>
+                                            <option value="cate13">식품·생필품</option>
+                                            <option value="cate14">홈·문구·취미</option>                                                
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2차 분류</td>
+                                    <td>
+                                        <select name="category2">
+                                            <option value="cate0">2차 분류 선택</option>
+                                            <option value="cate21">남성의류</option>
+                                            <option value="cate22">여성의류</option>
+                                            <option value="cate23">잡화</option>
+                                            <option value="cate24">뷰티</option>                                                
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </section>
+
+                        <!-- 기본정보 -->
+                        <section>
+                            <h4>기본정보</h4>
+                            <p>
+                                기본정보는 반드시 입력해야 합니다.
+                            </p>
+                            <table>
+                                <tbody><tr>
+                                    <td>상품명</td>
+                                    <td><input type="text" name="#"></td>
+                                </tr>
+                                <tr>
+                                    <td>기본설명</td>
+                                    <td>
+                                        <span>상품명 하단에 상품에 대한 추가적인 설명이 필요한 경우에 입력</span>
+                                        <input type="text" name="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>제조사</td>
+                                    <td><input type="text" name="#"></td>
+                                </tr>
+                                <tr>
+                                    <td>판매가격</td>
+                                    <td><input type="text" name="#">원</td>
+                                </tr>                                    
+                                <tr>
+                                    <td>할인율</td>
+                                    <td>
+                                        <span>0을 입력하면 할인율 없음</span>
+                                        <input type="text" name="#">원
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>포인트</td>
+                                    <td>
+                                        <span>0을 입력하면 포인트 없음</span>
+                                        <input type="text" name="#">점
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>재고수량</td>
+                                    <td><input type="text" name="#">개</td>
+                                </tr>
+                                <tr>
+                                    <td>배송비</td>
+                                    <td>
+                                        <span>0을 입력하면 배송비 무료</span>
+                                        <input type="text" name="#">원
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>상품 썸네일</td>
+                                    <td>
+                                        <span>크기 190 x 190, 상품 목록에 출력될 이미지 입니다. </span>
+                                        <input type="file" "="" name="#">
+
+                                        <span>크기 230 x 230, 상품 메인에 출력될 이미지 입니다. </span>
+                                        <input type="file" name="#">
+
+                                        <span>크기 456 x 456, 상품 상세에 출력될 이미지 입니다. </span>
+                                        <input type="file" name="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>상세 상품정보</td>
+                                    <td>
+                                        <span>크기 가로 940px 높이 제약없음, 크기 최대 1MB, 상세페이지 상품정보에 출력될 이미지 입니다.</span>
+                                        <input type="file" "="" name="#">
+                                    </td>
+                                </tr>
+                            </tbody></table>                                
+                        </section>
+
+                        <!-- 상품정보 제공 고시 -->
+                        <section>
+                            <h4>상품정보 제공고시</h4>
+                            <p>
+                                [전자상거래에 관한 상품정보 제공에 관한 고시] 항목에 의거 등록해야 되는 정보입니다.
+                            </p>
+                            <table>
+                                <tbody><tr>
+                                    <td>상품번호</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>상품상태</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>부가세 면세여부</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>영수증발행</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>사업자구분</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>브랜드</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>원산지</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>제품소재</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>색상</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>치수</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>제조자/수입국</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>제조국</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>취급시 주의사항</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>제조연월</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>품질보증기준</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>A/S 책임자와 전화번호</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                                <tr>
+                                    <td>주문후 예상 배송기간</td>
+                                    <td><input type="text" name=""></td>
+                                </tr>
+                            </tbody></table>                                
+                        </section>
+                        
+                        <input type="submit" value="등록하기">
+                    </form>
+                </article>
+
+                <p class="ico alert">
+                    <strong>Warning!</strong>
+                    전자상거래 등에서의 상품 등의 정보제공에 관한 고시에 따라 총 35개 상품군에 대해 상품 특성 등을 양식에 따라 입력할 수 있습니다.
+                </p>
+                <!--
+                <p class="ico info">
+                    <strong>Tip!</strong>
+                    전자상거래 등에서의 상품 등의 정보제공에 관한 고시에 따라 총 35개 상품군에 대해 상품 특성 등을 양식에 따라 입력할 수 있습니다.
+                </p>
+                -->
+
+                
+
+            </section>
+                
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p class="copyright">
+                    Copyright ©kmarket.co.kr All rights reserved. KMARKET ADMINISTRATOR Version 5.4.1.2
+                </p>
+            </div>
+        </footer>
+    </div>    
+</body>
+</html>
