@@ -8,10 +8,18 @@
 ul, ol {list-style: none;}
 a {text-decoration: none; color: #111;}
 input, textarea {outline: none;}
+strong {font-weight: bold;}
 
 #wrapper {
     width: 100%;
     height: auto;
+}
+#wrapper > main{
+  position: relative;
+  width: 1200px;
+  min-height: 1020px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* 헤더 */
@@ -128,6 +136,240 @@ header > .menu > div > ul > li:last-child > a {
     border-right: 1px solid #e9e9e9;
 }
 
+/* 사이드 바 */
+main > aside.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 215px;
+    height: 100%;
+  }
+  main > aside.left > ul.category {
+    width: 100%;
+    padding: 0 0 10px;
+    background: #333949;
+    position: relative;
+    height: 425px;
+    box-sizing: border-box;
+  }
+  main > aside.left > ul.category > li {
+    border-bottom: 1px solid #2b313f;
+    background: none;
+    text-align: left;
+    height: 40px;
+    font-weight: bold;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  main > aside.left > ul.category > li:first-child {
+    padding: 0 20px;
+    color: #fff;
+    line-height: 40px;
+  }
+  
+  main > aside.left > ul.category > li > i{
+    display: inline-block;
+    width: 22px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  
+  main > aside.left > ul.category > li > a{
+    display: block;
+    padding: 0 20px;
+    line-height: 40px;
+    color: #ccc;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  main > aside.left > ul.category > li > a > i{
+    display: inline-block;
+    width: 22px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  main > aside.left > ul.category > li > a > i.fa-angle-right{
+    float: right;
+    width: auto;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  
+  main > aside.left > ul.category > li > ol {
+    display: none;
+    position: absolute;
+    left: 215px;
+    top: 0px;
+    z-index: 10000;
+    width: 215px;
+    height: 100%;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #787f89;
+    border-top: none;
+    box-sizing: border-box;
+  }
+  
+  main > aside.left > ul.category > li > ol > li {
+    height: 24px;
+  }
+  
+  main > aside.left > ul.category > li > ol > li > a {}
+  
+  main > aside.left > article.best {
+    width: 215px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.2));
+    -moz-box-shadow: 0 0 5px rgba(55,55,5,0.2));
+    box-shadow: 0 0 5px rgb(55 55 5 / 20%);
+  }
+  main > aside.left > article.best > h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    color: #111;
+    margin: 6px;
+  }
+  main > aside.left > article.best > h1 > i {
+    margin-right: 6px;
+    font-size: 18px;
+  }
+  main > aside.left > article.best > ol {}
+  main > aside.left > article.best > ol > li {
+    width: 100%;
+    height: 100%;
+    padding: 0 6px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+  }
+  main > aside.left > article.best > ol > li > a {
+    display: block;
+    width: 100%;
+    height: 50px;
+  }
+  
+  main > aside.left > article.best > ol > li > a > div.thumb{
+    float: left;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  main > aside.left > article.best > ol > li > a > div.thumb > i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    font-size: 16px;
+    padding: 0;
+    color: #ef3e42;
+    border-bottom: 1px solid #ef3e42;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    line-height: 18px;
+  }
+  
+  main > aside.left > article.best > ol > li > a > div.thumb > img {
+    width: 100%;
+  }
+  
+  main > aside.left > article.best > ol > li:first-child > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  main > aside.left > article.best > ol > li:first-child > a > div.thumb {
+    position: relative;
+    float: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  main > aside.left > article.best > ol > li:first-child > a > div.thumb > i {
+    width: 35px;
+    height: 26px;
+  }
+  
+  main > aside.left > article.best > ol > li > a  h2{
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  main > aside.left > article.best > ol > li > a > article {
+    float: left;
+    width: 151px;
+    padding-left: 6px;
+    box-sizing: border-box;
+  }
+  
+  main > aside.left > article.best > ol > li > a > div.org_price {}
+  main > aside.left > article.best > ol > li > a > div.org_price > del {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    color: #aaa;
+  }
+  main > aside.left > article.best > ol > li > a > div.org_price > del::after{
+    content: "원";
+  }
+  main > aside.left > article.best > ol > li > a > div.org_price > span {
+    color: #eb000a;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+  }
+  main > aside.left > article.best > ol > li > a > div.org_price > span::after{
+    content: "↓";
+  }
+  main > aside.left > article.best > ol > li > a > div.dis_price > ins {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  main > aside.left > article.best > ol > li > a > div.dis_price > ins::after{
+    content: "원";
+  }
+  main > aside.left > article.best > ol > li > a > article > div.org_price > del {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    color: #aaa;
+  }
+  main > aside.left > article.best > ol > li > a > article > div.org_price > del::after{
+    content: "원";
+  }
+  main > aside.left > article.best > ol > li > a > article > div.org_price > span {
+    color: #eb000a;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+  }
+  main > aside.left > article.best > ol > li > a > article > div.org_price > span::after{
+    content: "↓";
+  }
+  main > aside.left > article.best > ol > li > a > article > div.dis_price > ins{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  main > aside.left > article.best > ol > li > a > article > div.dis_price > ins::after{
+    content: "원";
+  }
 /* 푸터 */
 footer {
     width: 100%;
@@ -197,22 +439,16 @@ main > aside {
     top: 0;
     width: 215px;
     height: 100%;
-    border: 1px solid blue;
-    box-sizing: border-box;            
 }
 main > section {
     float: right;
     width: 985px;
     height: 100%;
-    border: 1px solid red;
-    box-sizing: border-box;
 }
 
 #main > section {
     width: 100%;
     min-height: 700px;
-    border: 1px solid blue;
-    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -220,8 +456,6 @@ main > section {
     float: left;
     width: 25%;
     min-height: 300px;
-    border: 1px solid green;
-    box-sizing: border-box;
 }
 
 #main > .slider {

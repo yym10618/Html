@@ -4,98 +4,111 @@
     <meta charset="UTF-8">
     <title>케이마켓::대한민국 1등 쇼핑몰</title>
     <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <style>
-        main > aside.left {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 215px;
-            height: 100%;
-        }
-        main > aside.left > ul.category {
-            width: 100%;
-            padding: 0 0 10px;
-            background: #333949;
-            position: relative;
-            height: 425px;
-            box-sizing: border-box;
-        }
-        main > aside.left > ul.category > li {
-            border-bottom: 1px solid #2b313f;
-            background: none;
-            text-align: left;
-            height: 40px;
-            font-weight: bold;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
+#main {
+    position: relative;
+    width: 1200px;
+    min-height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#main > section {
+    float: right;
+    width: 985px;
+    height: 100%;
+}
+#main > section > h1 {}
+#main > section > h1 > a {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Malgun Gothic', dotum, sans-serif;
+    margin: 10px;
+    padding: 0 0 7px;
+    border-bottom: 2px solid #000;
+    line-height: 1em;
+}
+#main > section > article {
+    float: left;
+    width: 25%;
+    height: 47%;
+}
+#main > section > article > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-        main > aside.left > ul.category > li:first-child {
-            padding: 0 20px;
-            color: #fff;
-            line-height: 40px;
-        }
-        
-        main > aside.left > ul.category > li > i{
-            display: inline-block;
-            width: 22px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        main > aside.left > ul.category > li > i.fa-angle-right{
-            float: right;
-            width: auto;
-            margin-right: 0;
-            margin-top: 10px;
-        }
-
-        main > aside.left > ul.category > li > a{
-            display: block;
-            padding: 0 20px;
-            line-height: 40px;
-            color: #ccc;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1em;
-        }
-        main > aside.left > ul.category > li > a > i{
-            display: inline-block;
-            width: 22px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-        main > aside.left > ul.category > li > ol {
-            display: none;
-            position: absolute;
-            left: 215px;
-            top: 0px;
-            z-index: 10000;
-            width: 215px;
-            height: 100%;
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #787f89;
-            border-top: none;
-            box-sizing: border-box;
-        }
-        main > aside.left > ul.category > li > ol > li {}
-        main > aside.left > ul.category > li > ol > li > a {}
-        main > aside.left > article.best {}
-        main > aside.left > article.best > h1 {}
-        main > aside.left > article.best > h1 > i {}
-        main > aside.left > article.best > ol {}
-        main > aside.left > article.best > ol > li {}
-        main > aside.left > article.best > ol > li > a {}
-        main > aside.left > article.best > ol > li > a > h2{}
-        main > aside.left > article.best > ol > li > a > div {}
-        main > aside.left > article.best > ol > li > a > div > i {}
-        main > aside.left > article.best > ol > li > a > div > img {}
-        main > aside.left > article.best > ol > li > a > div.ori_price {}
-        main > aside.left > article.best > ol > li > a > div.ori_price > del {}
-        main > aside.left > article.best > ol > li > a > div.ori_price > span {}
-        main > aside.left > article.best > ol > li > a > div.dis_price > ins {}
+#main > section > article > a > div.thumb {
+    width: 100%;
+    height: 230px;
+    margin: 0px auto;
+    overflow: hidden;
+    text-align: center;
+}
+#main > section > article > a > div.thumb > img {}
+#main > section > article > a > h2 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    margin-top: 4px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#main > section > article > a > p {
+    color: #222;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 4px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#main > section > article > a > div.org_price {}
+#main > section > article > a > div.org_price > del {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #aaa;
+}
+#main > section > article > a > div.org_price > span {
+    color: #eb000a;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+}
+#main > section > article > a > div.dis_price {
+    margin-top: 4px;
+}
+#main > section > article > a > div.dis_price > ins {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+#main > section > article > a > div.dis_price > span {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: text-bottom;
+    width: 55px;
+    height: 13px;
+    background: url(./img/ico_freeshipping.gif) no-repeat;
+}
+#main > section > article  del::after{
+  content: "원";
+}
+#main > section > article  ins::after{
+  content: "원";
+}
+#main > section > article .org_price > span::after{
+  content: "↓";
+}
     </style>
 </head>
 <body>    
@@ -143,7 +156,7 @@
                 <ul class="category">
                   <li><i class="fas fa-bars"></i>카테고리</li>
                   <li>
-                    <a href="#"><i class="fas fa-tshirt"></i>패션·의류·뷰티<i class="fa-angle-right"></i></a>
+                    <a href="#"><i class="fas fa-tshirt"></i>패션·의류·뷰티<i class="fas fa-angle-right"></i></a>
                     <ol>
                       <li><a href="#">남성의류</a></li>
                       <li><a href="#">여성의류</a></li>
@@ -152,7 +165,7 @@
                     </ol>
                   </li>
                   <li>
-                    <a href="#"><i class="fas fa-laptop"></i>가전·디지털<i class="fa-angle-right"></i></a>
+                    <a href="#"><i class="fas fa-laptop"></i>가전·디지털<i class="fas fa-angle-right"></i></a>
                     <ol>
                       <li><a href="#">노트북/PC</a></li>
                       <li><a href="#">휴대폰</a></li>
@@ -161,7 +174,7 @@
                     </ol>
                   </li>
                   <li>
-                    <a href="#"><i class="fas fa-utensils"></i>식품·생필품<i class="fa-angle-right"></i></a>
+                    <a href="#"><i class="fas fa-utensils"></i>식품·생필품<i class="fas fa-angle-right"></i></a>
                     <ol>
                       <li><a href="#">신선식품</a></li>
                       <li><a href="#">가공식품</a></li>
@@ -170,7 +183,7 @@
                     </ol>
                   </li>
                   <li>
-                    <a href="#" class=""><i class="fas fa-home"></i>홈·문구·취미<i class="fa-angle-right"></i></a>
+                    <a href="#" class=""><i class="fas fa-home"></i>홈·문구·취미<i class="fas fa-angle-right"></i></a>
                     <ol style="display: none;">
                       <li><a href="#">가구/DIY</a></li>
                       <li><a href="#">침구.커튼</a></li>
@@ -273,53 +286,565 @@
                     </li>
                   </ol>
                 </article>
-              </aside>
+            </aside>
             <section id="main">
                 <section class="slider"></section>
                 <section class="hit">
-                    <h1><a href="#">히트상품</a></h1>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
+                  <h1><a href="#">히트상품</a></h1>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t1.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t2.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t3.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t4.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t5.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t6.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t7.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="./img/thumb-sample-t8.jpg" alt="t1">
+                      </div>
+                      <h2>베이직 기모 레글런 차콜레드2 차콜레드2</h2>
+                      <p>신상 긴팔 티셔츠/남자옷 무지티 티셔츠/남자옷 무지티 티셔츠</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
                 </section>
-                <section class="recomment">
-                    <h1><a href="#">추천상품</a></h1>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
+                <section class="recommend">
+                  <h1><a href="#">추천상품</a></h1>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
                 </section>
                 <section class="new">
-                    <h1><a href="#">최신상품</a></h1>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
+                  <h1><a href="#">최신상품</a></h1>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#">
+                      <div class="thumb">
+                        <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                      </div>
+                      <h2>상품명</h2>
+                      <p>간단한 상품설명</p>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                        <span>무료배송</span>
+                      </div>
+                    </a>
+                  </article>
                 </section>
                 <section class="discount">
-                    <h1><a href="#">할인상품</a></h1>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                    <article></article>
-                </section>
+            <h1><a href="#">할인상품</a></h1>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+            <article>
+              <a href="#">
+                <div class="thumb">
+                  <img src="https://dummyimage.com/230x230/ebebeb/4d4d4d&amp;text=230x230+product+image" alt="t1">
+                </div>
+                <h2>상품명</h2>
+                <p>간단한 상품설명</p>
+                <div class="org_price">
+                  <del>30,000</del>
+                  <span>10%</span>
+                </div>
+                <div class="dis_price">
+                  <ins>27,000</ins>
+                  <span>무료배송</span>
+                </div>
+              </a>
+            </article>
+          </section>
             </section>
         </main>
         <footer>

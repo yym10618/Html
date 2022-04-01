@@ -54,15 +54,14 @@
         #product-list > section > article > ul {
             width: 100%;
             height: 100%;
-            border: 1px solid blue;
-            box-sizing: border-box;
             overflow: hidden;
         }
         #product-list > section > article > ul > li {
-            float: left;
-            height: 100%;
-            border: 1px solid green;
-            box-sizing: border-box;
+          position: relative;
+          float: left;
+          height: 100%;
+          padding: 30px 10px;
+          box-sizing: border-box;
         }
         #product-list > section > article > ul > li:nth-child(1) {width: 20%;}
         #product-list > section > article > ul > li:nth-child(2) {width: 40%;}
@@ -77,6 +76,98 @@
 
         #product-list > section > article > ul > li > a.thumb > img {
             width: 100%;
+        }
+
+        #product-list > section > article > ul > li > h3.name{
+          font-size: 16px;
+          font-family: 'Malgun Gothic', dotum, sans-serif;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 6px;
+        }
+
+        #product-list > section > article > ul > li > div.dis_price > ins {
+          font-family: 'Noto Sans KR', sans-serif;
+          font-size: 16px;
+          text-decoration: none;
+        }
+        #product-list > section > article > ul > li > div.dis_price > ins::after {
+          content:"원"
+        }
+        #product-list > section > article > ul > li > div.org_price > del {
+          font-family: 'Noto Sans KR', sans-serif;
+          font-size: 12px;
+          color: #aaa;
+        }
+        #product-list > section > article > ul > li > div.org_price > del::after {
+          content:"원"
+        }
+        #product-list > section > article > ul > li > div.org_price > span {
+          color: #eb000a;
+          font-family: 'Noto Sans KR', sans-serif;
+          font-size: 10px;
+        }
+        #product-list > section > article > ul > li > div.org_price > span::after {
+          content: "↓";
+        }
+        #product-list > section > article > ul > li > span.freeshipping {
+          display: inline-block;
+          font-size: 0;
+          vertical-align: text-bottom;
+          width: 55px;
+          height: 13px;
+          background: url(../img/ico_freeshipping.gif) no-repeat;
+          margin-top: 4px;
+        }
+        #product-list > section > article > ul > li > h4.seller {
+          color: #444;
+          font-size: 12px;
+          margin-bottom: 6px;
+        }
+        #product-list > section > article > ul > li > h4.seller > i {
+          font-weight: 900;
+          font-family: "Font Awesome 5 Free";
+          -webkit-font-smoothing: antialiased;
+          display: inline-block;
+          font-style: normal;
+          font-variant: normal;
+          text-rendering: auto;
+          line-height: 1;
+        }
+        #product-list > section > article > ul > li > h4.seller > i::before{
+          content: "\f015";
+        }
+        #product-list > section > article > ul > li > h5.badge.power{
+          background-image: url(../img/ico_power_dealer.gif);
+          font-size: 0;
+          width: 80px;
+          height: 19px;
+          background-repeat: no-repeat;
+        }
+        #product-list > section > article > ul > li > h6.rating{
+          position: absolute;
+          left: 10px;
+          bottom: 30px;
+          font-size: 11px;
+          background-image: url(../img/rating_star.png);
+          background-repeat: no-repeat;
+          background-position: 36px 0px;
+          background-size: auto 100%;
+        }
+        #product-list > section > article > ul > li > h6.rating.star1{
+          width: 53px;
+        }
+        #product-list > section > article > ul > li > h6.rating.star2{
+          width: 69px;
+        }
+        #product-list > section > article > ul > li > h6.rating.star3{
+          width: 85px;
+        }
+        #product-list > section > article > ul > li > h6.rating.star4{
+          width: 101px;
+        }
+        #product-list > section > article > ul > li > h6.rating.star5{
+          width: 117px;
         }
 
         /* 상품 주문완료(order-complete) */
@@ -130,7 +221,141 @@
         </header>
 
         <main>
-            <aside></aside>
+          <aside class="left">
+            <ul class="category">
+              <li><i class="fas fa-bars"></i>카테고리</li>
+              <li>
+                <a href="#"><i class="fas fa-tshirt"></i>패션·의류·뷰티<i class="fas fa-angle-right"></i></a>
+                <ol>
+                  <li><a href="#">남성의류</a></li>
+                  <li><a href="#">여성의류</a></li>
+                  <li><a href="#">잡화</a></li>
+                  <li><a href="#">뷰티</a></li>
+                </ol>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-laptop"></i>가전·디지털<i class="fas fa-angle-right"></i></a>
+                <ol>
+                  <li><a href="#">노트북/PC</a></li>
+                  <li><a href="#">휴대폰</a></li>
+                  <li><a href="#">카메라</a></li>
+                  <li><a href="#">가전</a></li>
+                </ol>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-utensils"></i>식품·생필품<i class="fas fa-angle-right"></i></a>
+                <ol>
+                  <li><a href="#">신선식품</a></li>
+                  <li><a href="#">가공식품</a></li>
+                  <li><a href="#">건강식품</a></li>
+                  <li><a href="#">생필품</a></li>
+                </ol>
+              </li>
+              <li>
+                <a href="#" class=""><i class="fas fa-home"></i>홈·문구·취미<i class="fas fa-angle-right"></i></a>
+                <ol style="display: none;">
+                  <li><a href="#">가구/DIY</a></li>
+                  <li><a href="#">침구.커튼</a></li>
+                  <li><a href="#">생활용품</a></li>
+                  <li><a href="#">사무용품</a></li>
+                </ol>
+              </li>
+            </ul>
+            <!-- 베스트상품 -->
+            <article class="best">
+              <h1><i class="fas fa-crown"></i>베스트상품</h1>
+              <ol>
+                <li>
+                  <a href="#">
+                    <div class="thumb">
+                      <i>1</i>
+                      <img src="../img/thumb-popular-item1.jpg" alt="item1">
+                    </div>
+                    <h2>TH-파스텔드레스셔츠 - 그린</h2>
+                    <div class="org_price">
+                      <del>30,000</del>
+                      <span>10%</span>
+                    </div>
+                    <div class="dis_price">
+                      <ins>27,000</ins>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="thumb">
+                      <i>2</i>
+                      <img src="../img/thumb-sample-t1.jpg" alt="item1">
+                    </div>
+                    <article>
+                      <h2>TH-파스텔드레스셔츠 - 그린</h2>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                    </article>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="thumb">
+                      <i>3</i>
+                      <img src="../img/thumb-sample-t2.jpg" alt="item1">
+                    </div>
+                    <article>
+                      <h2>TH-파스텔드레스셔츠 - 그린</h2>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                    </article>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="thumb">
+                      <i>4</i>
+                      <img src="../img/thumb-sample-t3.jpg" alt="item1">
+                    </div>
+                    <article>
+                      <h2>TH-파스텔드레스셔츠 - 그린</h2>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                    </article>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="thumb">
+                      <i>5</i>
+                      <img src="../img/thumb-sample-t4.jpg" alt="item1">
+                    </div>
+                    <article>
+                      <h2>TH-파스텔드레스셔츠 - 그린</h2>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                    </article>
+                  </a>
+                </li>
+              </ol>
+            </article>
+         </aside>
             <section id="product-list">
                 <!-- 제목, 페이지 네비게이션 -->
                 <nav>
@@ -142,120 +367,296 @@
 
                 <!-- 상품목록 정렬옵션 -->
                 <ul class="sort">
-                    <li><a href="#" class="on">판매많은순</a></li>
-                    <li><a href="#">낮은가격순</a></li>
-                    <li><a href="#">높은가격순</a></li>
-                    <li><a href="#">평점높은순</a></li>
-                    <li><a href="#">후기많은순</a></li>
-                    <li><a href="#">최근등록순</a></li>
+                  <li><a href="#">판매많은순</a></li>
+                  <li><a href="#">낮은가격순</a></li>
+                  <li><a href="#">높은가격순</a></li>
+                  <li><a href="#">평점높은순</a></li>
+                  <li><a href="#">후기많은순</a></li>
+                  <li><a href="#">최근등록순</a></li>
                 </ul>
 
                 <!-- 상품목록 10개 -->
                 <section>
-                    <article>
-                        <ul>
-                            <li>
-                                <a href="#" class="thumb">
-                                    <img src="../img/thumb-sample-t1.jpg" alt="상품이미지">
-                                </a>
-                            </li>
-                            <li>
-                                <h3 class="name">FreeMovement BULEFORCE</h3>
-                                <p class="desc">
-                                    <a href="#">[블루포스] 여름신상 남방/솔리드긴팔남자옷/데님청/체크스판셔츠</a>
-                                </p>
-                            </li>
-                            <li>
-                                <div class="dis_price">
-                                    <ins>27,000</ins>
-                                </div>
-                                <div class="ori_price">
-                                    <del>30,000</del>
-                                    <span>10%</span>
-                                </div>
-                                <span class="freeshipping">무료배송</span>
-                            </li>
-                            <li>
-                                <h4 class="seller">
-                                    <i class="fas fa-home">&nbsp;블루포스</i>
-                                </h4>
-                                <h5 class="badge power">판매자등급</h5>
-                                <h6 class="rating star1">상품평</h6>
-                            </li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t1.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">FreeMovement BLUEFORCE</h3>
+                        <p class="desc">
+                          <a href="#">[블루포스] 여름신상 남방/솔리드긴팔남자옷/데님청/체크스판셔츠</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;블루포스</h4>
+                        <h5 class="badge power">판매자등급</h5>
+                        <h6 class="rating star1">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t2.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge great">판매자등급</h5>
+                        <h6 class="rating star2">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t3.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star3">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t4.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star4">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t5.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상정명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star5">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t5.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star5">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t5.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star5">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t5.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star5">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t5.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star5">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
+                  <article>
+                    <ul>
+                      <li>
+                        <a href="#" class="thumb"><img src="../img/thumb-sample-t5.jpg" alt="상품이미지"></a>
+                      </li>
+                      <li>
+                        <h3 class="name">상품명</h3>
+                        <p class="desc">
+                          <a href="#">상품설명</a>
+                        </p>
+                      </li>
+                      <li>
+                        <div class="dis_price">
+                          <ins>27,000</ins>
+                        </div>
+                        <div class="org_price">
+                          <del>30,000</del>
+                          <span>10%</span>
+                        </div>
+                        <span class="freeshipping">무료배송</span>
+                      </li>
+                      <li>
+                        <h4 class="seller"><i class="fas fa-home"></i>&nbsp;판매자상점명</h4>
+                        <h5 class="badge power great">판매자등급</h5>
+                        <h6 class="rating star5">상품평</h6>
+                      </li>
+                    </ul>
+                  </article>
                 </section>
 
                 <!-- 상품목록 페이지번호 -->
